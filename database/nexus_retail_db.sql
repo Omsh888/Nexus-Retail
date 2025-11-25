@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS tbl_category;
 DROP TABLE IF EXISTS tbl_users;
 
 -- CATEGORY TABLE
-CREATE TABLE tbl_category (
+CREATE TABLE IF NOT EXISTS tbl_category (
     id SERIAL PRIMARY KEY,
     bg_color VARCHAR(255),
     category_id VARCHAR(255) UNIQUE,
@@ -18,7 +18,7 @@ CREATE TABLE tbl_category (
 );
 
 -- ITEMS TABLE
-CREATE TABLE tbl_items (
+CREATE TABLE IF NOT EXISTS tbl_items (
     id SERIAL PRIMARY KEY,
     created_at TIMESTAMP,
     description VARCHAR(255),
@@ -33,7 +33,7 @@ CREATE TABLE tbl_items (
 );
 
 -- ORDERS TABLE
-CREATE TABLE tbl_orders (
+CREATE TABLE IF NOT EXISTS tbl_orders (
     id SERIAL PRIMARY KEY,
     created_at TIMESTAMP,
     customer_name VARCHAR(255),
@@ -50,7 +50,7 @@ CREATE TABLE tbl_orders (
 );
 
 -- ORDER ITEMS TABLE
-CREATE TABLE tbl_order_items (
+CREATE TABLE IF NOT EXISTS tbl_order_items (
     id SERIAL PRIMARY KEY,
     item_id VARCHAR(255),
     name VARCHAR(255),
@@ -62,7 +62,7 @@ CREATE TABLE tbl_order_items (
 );
 
 -- USERS TABLE
-CREATE TABLE tbl_users (
+CREATE TABLE IF NOT EXISTS tbl_users (
     id SERIAL PRIMARY KEY,
     created_at TIMESTAMP,
     email VARCHAR(255),
