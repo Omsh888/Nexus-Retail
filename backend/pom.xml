@@ -9,7 +9,7 @@
 		<version>3.4.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>in.bushansirgur</groupId>
+	<groupId>in.nexus</groupId>
 	<artifactId>billingsoftware</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>billingsoftware</name>
@@ -93,6 +93,11 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.7.3</version>
+		</dependency>
+		<dependency>
+    		<groupId>me.paulschwarz</groupId>
+    		<artifactId>spring-dotenv</artifactId>
+    		<version>4.0.0</version>
 		</dependency>
 
 	</dependencies>

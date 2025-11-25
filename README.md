@@ -45,7 +45,6 @@ https://schema.getpostman.com/json/collection/v2.1.0/collection.json
 5. Open freontend project (client) in your favorite code editor (preferrably VCS or WebStorm)
 6. Open contants.js file, add your razorpay access key
 7. ## Start the application
-   If you find difficulties in setting up the project in your system email me at: bushansc@gmail.com
 
 
 
