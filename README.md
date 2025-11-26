@@ -1,8 +1,8 @@
-1. cd frontend 
+1. cd frontend
 npm run dev
 http://localhost:8080
 
-2. cd backend 
+2. cd billingsoftware
 ./mvnw spring-boot:run
 http://localhost:5173
 
@@ -14,7 +14,7 @@ https://schema.getpostman.com/json/collection/v2.1.0/collection.json
 
 1. Opend the backend project (billingsoftware) in your favorite IDE (preferrably IntelliJ IDEA)
 2. Open application.properties file, add your aws, razorpay access key and secret key (Don't use mine, it won't work)
-3. Create the database with name billing_app
+3. Create the database with name nexux_retail_db
 4. Start the application
     It will automatically create the tables. Now we need to insert admin record
     --
@@ -46,37 +46,17 @@ https://schema.getpostman.com/json/collection/v2.1.0/collection.json
 6. Open contants.js file, add your razorpay access key
 7. ## Start the application
 
-
-
-
-You said:
-i have one project 
-in the root folder there are three folders stored in a single repository
-frontend - react 
-backend - java spring boot
-database - postgres sql query dbscript
-
 project running steps
 cd frontend
 npm run dev
 
 in other terminal
-cd backend
+cd billingsoftware
 ./mvnw spring-boot:run
 
-in this way my project is running locally.
-
-now i want to deploy my frontend in vercel
-and backend in render
-
-and for database storage i am using pgadmin where i am storing my tables and data
-
-now give me steps to achieve what i want 
-and tell me is this a good way to go on the project
-
 # backend render deployment
-Build Command: ./mvnw clean package -DskipTests
-Start Command: java -jar target/*.jar
+Runtime Environment: docker
+file: Dockerfile
 
 # frontend vercel deployment
 Framework: Vite

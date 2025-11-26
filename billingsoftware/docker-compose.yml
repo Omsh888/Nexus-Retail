@@ -1,0 +1,15 @@
+
+services:
+  nexus-backend:
+    build: .
+    container_name: nexus-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: ${DATABASE_URL}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_PROFILES_ACTIVE: docker
+    restart: always
+    env_file:
+      - .env

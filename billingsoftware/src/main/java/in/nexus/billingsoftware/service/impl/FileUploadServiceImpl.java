@@ -26,7 +26,17 @@ public class FileUploadServiceImpl implements FileUploadService {
 
     @Override
     public String uploadFile(MultipartFile file) {
-        String filenameExtension = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".")+1);
+        String originalFilename = file.getOriginalFilename();
+        if (originalFilename == null || originalFilename.isBlank()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "File must have a valid filename");
+        }
+
+        int dot = originalFilename.lastIndexOf('.');
+        if (dot <= 0 || dot == originalFilename.length() - 1) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "File must have an extension");
+        }
+
+        String filenameExtension = originalFilename.substring(dot + 1);
         String key = UUID.randomUUID().toString()+"."+filenameExtension;
         try {
             PutObjectRequest putObjectRequest = PutObjectRequest.builder()
