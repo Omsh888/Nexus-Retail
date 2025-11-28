@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS tbl_order_items;
 DROP TABLE IF EXISTS tbl_items;
 DROP TABLE IF EXISTS tbl_orders;
